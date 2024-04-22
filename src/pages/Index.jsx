@@ -5,7 +5,7 @@ import { FaCar, FaSortAmountDown, FaDatabase } from "react-icons/fa";
 const carData = [
   { id: 1, brand: "Tesla", model: "Model S", year: 2020, mileage: 15000, color: "Red", imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" },
   { id: 2, brand: "BMW", model: "X5", year: 2019, mileage: 20000, color: "Black", imageUrl: "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" },
-  { id: 3, brand: "Audi", model: "A4", year: 2021, mileage: 10000, color: "White", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" }
+  { id: 3, brand: "Audi", model: "A4", year: 2021, mileage: 10000, color: "White", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
 ];
 
 const Index = () => {
@@ -16,7 +16,7 @@ const Index = () => {
     setFilter(event.target.value);
   };
 
-  const filteredCars = cars.filter(car => {
+  const filteredCars = cars.filter((car) => {
     if (!filter) return true;
     return car.color === filter || car.mileage.toString() === filter;
   });
@@ -58,9 +58,9 @@ const Index = () => {
             <Heading as="h3" size="md" mb={4}>
               Available Cars
             </Heading>
-            <HStack spacing={4}>
-              {filteredCars.map(car => (
-                <Box key={car.id} p={4} shadow="md" borderWidth="1px">
+            <Flex wrap="wrap" justify="space-between">
+              {filteredCars.map((car) => (
+                <Box key={car.id} p={4} shadow="md" borderWidth="1px" width="30%">
                   <Image src={car.imageUrl} />
                   <Text mt={2}>Brand: {car.brand}</Text>
                   <Text>Model: {car.model}</Text>
@@ -69,7 +69,7 @@ const Index = () => {
                   <Text>Color: {car.color}</Text>
                 </Box>
               ))}
-            </HStack>
+            </Flex>
           </Box>
         </Flex>
 
@@ -82,5 +82,3 @@ const Index = () => {
 };
 
 export default Index;
-
-
