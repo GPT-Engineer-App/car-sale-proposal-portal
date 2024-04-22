@@ -9,6 +9,20 @@ const carData = [
   { id: 4, brand: "Mercedes", model: "C Class", year: 2018, mileage: 12000, color: "Blue", imageUrl: "https://images.unsplash.com/photo-1511391409112-30365a4a90e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
   { id: 5, brand: "Ford", model: "Mustang", year: 2022, mileage: 5000, color: "Yellow", imageUrl: "https://images.unsplash.com/photo-1605296867304-46d5465a13f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
   { id: 6, brand: "Chevrolet", model: "Camaro", year: 2020, mileage: 8000, color: "Green", imageUrl: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 7, brand: "Honda", model: "Civic", year: 2022, mileage: 6000, color: "Blue", imageUrl: "https://images.unsplash.com/photo-1580910051074-3e9717a5e9f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 8, brand: "Toyota", model: "Corolla", year: 2021, mileage: 7000, color: "Gray", imageUrl: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 9, brand: "Nissan", model: "Altima", year: 2019, mileage: 12000, color: "Black", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 10, brand: "Ford", model: "Explorer", year: 2020, mileage: 15000, color: "Red", imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" },
+  { id: 11, brand: "Chevrolet", model: "Impala", year: 2018, mileage: 20000, color: "White", imageUrl: "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" },
+  { id: 12, brand: "BMW", model: "3 Series", year: 2021, mileage: 5000, color: "Yellow", imageUrl: "https://images.unsplash.com/photo-1605296867304-46d5465a13f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 13, brand: "Audi", model: "Q5", year: 2022, mileage: 8000, color: "Green", imageUrl: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 14, brand: "Mercedes", model: "E Class", year: 2019, mileage: 12000, color: "Blue", imageUrl: "https://images.unsplash.com/photo-1511391409112-30365a4a90e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 15, brand: "Tesla", model: "Model 3", year: 2023, mileage: 10000, color: "Black", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 16, brand: "Honda", model: "Accord", year: 2020, mileage: 5000, color: "Red", imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" },
+  { id: 17, brand: "Toyota", model: "Camry", year: 2021, mileage: 7000, color: "Gray", imageUrl: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 18, brand: "Nissan", model: "Maxima", year: 2019, mileage: 12000, color: "Black", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 19, brand: "Ford", model: "Fusion", year: 2020, mileage: 15000, color: "Red", imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" },
+  { id: 20, brand: "Chevrolet", model: "Malibu", year: 2018, mileage: 20000, color: "White", imageUrl: "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" },
 ];
 
 const Index = () => {
