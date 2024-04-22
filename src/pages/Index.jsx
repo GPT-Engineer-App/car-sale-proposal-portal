@@ -58,7 +58,7 @@ const Index = () => {
             <Heading as="h3" size="md" mb={4}>
               Available Cars
             </Heading>
-            <Flex wrap="wrap" justify="space-between">
+            <Flex wrap="wrap" justify="space-between" overflowX="scroll">
               {filteredCars.map((car) => (
                 <Box key={car.id} p={4} shadow="md" borderWidth="1px" width="30%">
                   <Image src={car.imageUrl} />
