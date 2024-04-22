@@ -45,7 +45,22 @@ const Index = () => {
                 <Text>Mileage: 15,000</Text>
                 <Text>Color: Red</Text>
               </Box>
-              {/* Repeat the above Box for each car entry */}
+              <Box p={4} shadow="md" borderWidth="1px">
+                <Image src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                <Text mt={2}>Brand: BMW</Text>
+                <Text>Model: X5</Text>
+                <Text>Year: 2019</Text>
+                <Text>Mileage: 20,000</Text>
+                <Text>Color: Black</Text>
+              </Box>
+              <Box p={4} shadow="md" borderWidth="1px">
+                <Image src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+                <Text mt={2}>Brand: Audi</Text>
+                <Text>Model: A4</Text>
+                <Text>Year: 2021</Text>
+                <Text>Mileage: 10,000</Text>
+                <Text>Color: White</Text>
+              </Box>
             </HStack>
           </Box>
         </Flex>
