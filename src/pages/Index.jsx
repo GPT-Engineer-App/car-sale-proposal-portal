@@ -6,6 +6,9 @@ const carData = [
   { id: 1, brand: "Tesla", model: "Model S", year: 2020, mileage: 15000, color: "Red", imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" },
   { id: 2, brand: "BMW", model: "X5", year: 2019, mileage: 20000, color: "Black", imageUrl: "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" },
   { id: 3, brand: "Audi", model: "A4", year: 2021, mileage: 10000, color: "White", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 4, brand: "Mercedes", model: "C Class", year: 2018, mileage: 12000, color: "Blue", imageUrl: "https://images.unsplash.com/photo-1511391409112-30365a4a90e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 5, brand: "Ford", model: "Mustang", year: 2022, mileage: 5000, color: "Yellow", imageUrl: "https://images.unsplash.com/photo-1605296867304-46d5465a13f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
+  { id: 6, brand: "Chevrolet", model: "Camaro", year: 2020, mileage: 8000, color: "Green", imageUrl: "https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
 ];
 
 const Index = () => {
