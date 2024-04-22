@@ -30,12 +30,21 @@ const Index = () => {
   const [filter, setFilter] = useState("");
 
   const handleFilterChange = (event) => {
-    setFilter(event.target.value);
+    const value = event.target.value;
+    if (value === "asc" || value === "desc") {
+      const sortedCars = [...cars].sort((a, b) => {
+        if (value === "asc") return a.mileage - b.mileage;
+        if (value === "desc") return b.mileage - a.mileage;
+      });
+      setCars(sortedCars);
+    } else {
+      setFilter(value);
+    }
   };
 
   const filteredCars = cars.filter((car) => {
     if (!filter) return true;
-    return car.color === filter || car.mileage.toString() === filter;
+    return car.color === filter;
   });
 
   return (
@@ -58,9 +67,8 @@ const Index = () => {
                 <option value="Red">Color: Red</option>
                 <option value="Black">Color: Black</option>
                 <option value="White">Color: White</option>
-                <option value="15000">Mileage: 15,000</option>
-                <option value="20000">Mileage: 20,000</option>
-                <option value="10000">Mileage: 10,000</option>
+                <option value="asc">Mileage: Ascending</option>
+                <option value="desc">Mileage: Descending</option>
               </Select>
               <Button leftIcon={<FaSortAmountDown />} colorScheme="blue">
                 Apply Sort
