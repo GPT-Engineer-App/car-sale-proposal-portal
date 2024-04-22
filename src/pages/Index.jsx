@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Flex, Heading, Text, Image, Select, Button, VStack, HStack, Container } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Button, VStack, HStack, Container, CheckboxGroup, Checkbox } from "@chakra-ui/react";
 import { FaCar, FaSortAmountDown, FaDatabase } from "react-icons/fa";
 
 const carData = [
@@ -59,17 +59,15 @@ const Index = () => {
   const [cars, setCars] = useState(carData);
   const [filter, setFilter] = useState("");
 
-  const handleFilterChange = (event) => {
-    const value = event.target.value;
-    if (value === "asc" || value === "desc") {
-      const sortedCars = [...cars].sort((a, b) => {
-        if (value === "asc") return a.mileage - b.mileage;
-        if (value === "desc") return b.mileage - a.mileage;
-      });
-      setCars(sortedCars);
-    } else {
-      setFilter(value);
-    }
+  const [selectedColors, setSelectedColors] = useState([]);
+
+  const handleFilterChange = (values) => {
+    setSelectedColors(values);
+  };
+
+  const applyFilters = () => {
+    const filtered = carData.filter((car) => selectedColors.includes(car.color));
+    setCars(filtered);
   };
 
   const filteredCars = cars.filter((car) => {
@@ -93,15 +91,13 @@ const Index = () => {
                 Filters
               </Heading>
               <Text>Sort by:</Text>
-              <Select placeholder="Select option" onChange={handleFilterChange}>
-                <option value="Red">Color: Red</option>
-                <option value="Black">Color: Black</option>
-                <option value="White">Color: White</option>
-                <option value="asc">Mileage: Ascending</option>
-                <option value="desc">Mileage: Descending</option>
-              </Select>
-              <Button leftIcon={<FaSortAmountDown />} colorScheme="blue">
-                Apply Sort
+              <CheckboxGroup onChange={handleFilterChange}>
+                <Checkbox value="Red">Color: Red</Checkbox>
+                <Checkbox value="Black">Color: Black</Checkbox>
+                <Checkbox value="White">Color: White</Checkbox>
+              </CheckboxGroup>
+              <Button leftIcon={<FaSortAmountDown />} colorScheme="blue" onClick={applyFilters}>
+                Apply Filters
               </Button>
               <Button leftIcon={<FaDatabase />} colorScheme="teal">
                 Fetch Cars
