@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Flex, Heading, Text, Image, Select, Button, VStack, HStack, Container } from "@chakra-ui/react";
 import { FaCar, FaSortAmountDown, FaDatabase } from "react-icons/fa";
 
+const carData = [
+  { id: 1, brand: "Tesla", model: "Model S", year: 2020, mileage: 15000, color: "Red", imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" },
+  { id: 2, brand: "BMW", model: "X5", year: 2019, mileage: 20000, color: "Black", imageUrl: "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" },
+  { id: 3, brand: "Audi", model: "A4", year: 2021, mileage: 10000, color: "White", imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" }
+];
+
 const Index = () => {
+  const [cars, setCars] = useState(carData);
+  const [filter, setFilter] = useState("");
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  const filteredCars = cars.filter(car => {
+    if (!filter) return true;
+    return car.color === filter || car.mileage.toString() === filter;
+  });
+
   return (
     <Container maxW="container.xl">
       <Flex direction="column" minHeight="100vh">
@@ -19,9 +37,13 @@ const Index = () => {
                 Filters
               </Heading>
               <Text>Sort by:</Text>
-              <Select placeholder="Select option">
-                <option value="color">Color</option>
-                <option value="mileage">Mileage</option>
+              <Select placeholder="Select option" onChange={handleFilterChange}>
+                <option value="Red">Color: Red</option>
+                <option value="Black">Color: Black</option>
+                <option value="White">Color: White</option>
+                <option value="15000">Mileage: 15,000</option>
+                <option value="20000">Mileage: 20,000</option>
+                <option value="10000">Mileage: 10,000</option>
               </Select>
               <Button leftIcon={<FaSortAmountDown />} colorScheme="blue">
                 Apply Sort
@@ -37,30 +59,16 @@ const Index = () => {
               Available Cars
             </Heading>
             <HStack spacing={4}>
-              <Box p={4} shadow="md" borderWidth="1px">
-                <Image src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjYXJ8ZW58MHx8fHwxNzEzNzgxOTg3fDA&ixlib=rb-4.0.3&q=80&w=1080" />
-                <Text mt={2}>Brand: Tesla</Text>
-                <Text>Model: Model S</Text>
-                <Text>Year: 2020</Text>
-                <Text>Mileage: 15,000</Text>
-                <Text>Color: Red</Text>
-              </Box>
-              <Box p={4} shadow="md" borderWidth="1px">
-                <Image src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                <Text mt={2}>Brand: BMW</Text>
-                <Text>Model: X5</Text>
-                <Text>Year: 2019</Text>
-                <Text>Mileage: 20,000</Text>
-                <Text>Color: Black</Text>
-              </Box>
-              <Box p={4} shadow="md" borderWidth="1px">
-                <Image src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                <Text mt={2}>Brand: Audi</Text>
-                <Text>Model: A4</Text>
-                <Text>Year: 2021</Text>
-                <Text>Mileage: 10,000</Text>
-                <Text>Color: White</Text>
-              </Box>
+              {filteredCars.map(car => (
+                <Box key={car.id} p={4} shadow="md" borderWidth="1px">
+                  <Image src={car.imageUrl} />
+                  <Text mt={2}>Brand: {car.brand}</Text>
+                  <Text>Model: {car.model}</Text>
+                  <Text>Year: {car.year}</Text>
+                  <Text>Mileage: {car.mileage}</Text>
+                  <Text>Color: {car.color}</Text>
+                </Box>
+              ))}
             </HStack>
           </Box>
         </Flex>
@@ -74,3 +82,5 @@ const Index = () => {
 };
 
 export default Index;
+
+
